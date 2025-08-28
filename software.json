@@ -38,25 +38,6 @@
     }
   },
   {
-    "serial_no": "3",
-    "organization": "Ministry of Development of North Eastern Region",
-    "problem_statement_title": "Low-Cost smart transportation solution for Agri produce from remote farms to nearest motorable road in NER Region",
-    "category": "Hardware",
-    "ps_number": "SIH25003",
-    "submitted_ideas_count": "0",
-    "theme": "Transportation & Logistics",
-    "details": {
-      "problem_statement_id": "25003",
-      "problem_statement": "This problem statement proposes the design and development of prefabricated modular road panels that use bamboo reinforcement and plastic waste-infused composites to build durable, erosion-resistant roads in remote and hilly areas. The solution may be: • Utilize bamboo mesh or strips as structural reinforcement within concrete or stabilized soil panels. • Incorporate processed plastic waste (Low-Density Polyethylene - LDPE, High-Density Polyethylene - HDPE) into the mix to improve water resistance and flexibility. • Include drainage features, slope adaptation mechanisms, and anti-slip surfacing.",
-      "background": "The Northeastern Region faces persistent challenges in building and maintaining rural roads due to difficult terrain, high rainfall, and limited access to conventional construction materials. Simultaneously, plastic waste management remains a growing concern in both urban and semi-urban pockets of the region. Bamboo, abundantly available in NER, offers high tensile strength and flexibility, while recycled plastic enhances water resistance and durability when used in road surfacing. Combining these two materials presents a unique opportunity to create sustainable, modular road infrastructure tailored for NER's needs.",
-      "expected_solution": "• A prototype modular panel system combining bamboo and recycled plastic. • A deployment guide for constructing 100-200 meter stretches in rural terrain. • Cost-benefit analysis compared to conventional road-building methods. • Environmental impact assessment and scalability roadmap. • Optional integration with IoT-based monitoring for wear and tear tracking.",
-      "department": "Ministry of Rural Development/ Ministry of Environment, Forest and Climate Change / Ministry of Road Transport and Highways",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
     "serial_no": "4",
     "organization": "Ministry of Fisheries, Animal Husbandry & Dairying",
     "problem_statement_title": "lmage based breed recognition for cattle and buffaloes of India",
@@ -233,40 +214,6 @@
     }
   },
   {
-    "serial_no": "14",
-    "organization": "Government of Punjab",
-    "problem_statement_title": "Waste Segregation Monitoring System for Urban Local Bodies",
-    "category": "Hardware",
-    "ps_number": "SIH25014",
-    "submitted_ideas_count": "0",
-    "theme": "Clean & Green Technology",
-    "details": {
-      "problem_statement_id": "25014",
-      "problem_statement": "Problem Description Urban local bodies struggle with improper waste segregation at the household level, leading to inefficiencies in waste processing and increased landfill burden. Despite awareness campaigns, compliance remains low due to lack of monitoring and feedback mechanisms. This issue is widespread in urban areas with high waste generation. Impact / Why this problem needs to be solved Improper segregation affects nearly 70% of urban waste management systems, increasing recycling costs and environmental pollution. A solution would improve waste processing efficiency and reduce landfill dependency. Expected Outcomes • IoT-based system or mobile app to monitor segregation at collection points. • Provide real-time feedback to households on compliance. • Generate compliance reports for local authorities to enforce better waste management. Relevant Stakeholders / Beneficiaries • Urban local bodies • Residents • Waste management agencies • Environmental organizations Supporting Data Swachh Bharat Mission Urban 2.0 Report, highlighting segregation challenges.",
-      "department": "Department of Higher Education",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "15",
-    "organization": "Government of Punjab",
-    "problem_statement_title": "Intelligent Pesticide Sprinkling System Determined by the Infection Level of a Plant",
-    "category": "Hardware",
-    "ps_number": "SIH25015",
-    "submitted_ideas_count": "0",
-    "theme": "Agriculture, FoodTech & Rural Development",
-    "details": {
-      "problem_statement_id": "25015",
-      "problem_statement": "Problem Description Excessive and indiscriminate application of pesticides in agriculture creates soil degradation, water contamination, damage to useful insects, and health risks for humans and animals. Regardless of whether the plant is healthy or infected, traditional pesticide spraying methods are used evenly, leading to waste and contamination. Many farmers lack affordable, automated systems to monitor crop health and control pesticide usage accordingly. This issue occurs on both large and small farms where manual inspections and sprays are labor-intensive, inefficient, and often inaccurate. An intelligent system is required to recognize pest or disease infection in individual plants and regulate the amount of pesticide sprayed. This ensures optimal use of chemicals, reduces environmental impact, and promotes sustainable agriculture. Impact / Why this problem needs to be solved • Reduces excessive pesticide usage and lowers farming costs. • Protects soil and water quality, while minimizing harm to non-target organisms. • Improves crop yield and quality through precise and timely treatment. • Supports small and marginal farmers with cost savings and better farm sustainability. • Contributes to safe and eco-friendly food production. Expected Outcomes • A smart automated system with sensors, cameras, and AI algorithms to detect infection levels. • IoT-controlled sprayer to dispense pesticides only where and when needed. • Mobile or web interface for farmers to monitor plant health and control the system remotely. Relevant Stakeholders / Beneficiaries • Farmers (small, medium, and large scale) • Agricultural extension officers • Agrochemical companies • Environmental agencies • Consumers demanding residue-free produce • Government bodies promoting sustainable farming",
-      "department": "Department of Higher Education",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
     "serial_no": "16",
     "organization": "Government of Punjab",
     "problem_statement_title": "Automated Student Attendance Monitoring and Analytics System for Colleges",
@@ -335,43 +282,6 @@
     }
   },
   {
-    "serial_no": "20",
-    "organization": "Ministry of Railways",
-    "problem_statement_title": "Development of indigenous contactless Integrated Track Monitoring Systems (ITMS) for Track Recording on Indian Railways",
-    "category": "Hardware",
-    "ps_number": "SIH25020",
-    "submitted_ideas_count": "0",
-    "theme": "Smart Automation",
-    "details": {
-      "problem_statement_id": "25020",
-      "problem_statement": "",
-      "background": "Indian Railways employs Track Recording Cars (TRCs) for periodic assessment of track geometry to ensure safety, ride comfort, and operational efficiency. While some TRCs still use outdated, contact-based systems, others rely on imported contactless technologies—typically laser-based solutions integrated with proprietary software. These foreign systems pose several challenges: • High procurement and maintenance costs • Limited customization capabilities • Dependency on external vendors and closed-source software To address these issues and promote self-reliance, Indian Railways invites proposals for the Development of indigenous contactless Integrated Track Monitoring Systems (ITMS) for Track Recording on Indian Railways. Objective Design and develop a comprehensive, indigenous Integrated Track Monitoring System that: • Fully complies with RDSO Specification TM/IM/448, Rev. 1: 2023 and EN 13848 standards. • Supports modularity, ease of maintenance, and cost efficiency. Technical Scope Sub-systems: • Track geometry measurement system • Full rail profile and wear measurement system • Condition monitoring of track components • Acceleration measurement system • Infringement measurement to MMD/SOD • Rear window video recording system Data Acquisition & Sampling: • Sampling interval: 25 cm • Operable under dynamic loads at speeds from 0–200 km/h • Real-time acquisition and processing capability Data Processing & Analysis: • Onboard server for real-time data filtering and analysis • Software must: – Eliminate environmental and operational noise – Extract and analyze track geometry parameters & track component conditions – Comply with EN 13848 Part 1 & 2 and RDSO TM/IM/448, Rev. 1: 2023 accuracy standards Output & Storage: • Chainage-mapped outputs for: – Track Geometry: Gauge, alignment, unevenness, twist, cross level, curve – Dynamic Parameters: Vertical & lateral acceleration – Rail Condition: Profile and wear – Track Components: Rail surface, fastenings, ballast, sleepers – Synchronized rear-view video footage – Exportable data in standard formats (CSV, XML, JPEG, AVI) • Secure storage and archival capability Key Performance Parameters • Maximum Speed: 200 km/h • Sampling Rate: 25 cm • Accuracy: As per EN 13848 Part 2 & RDSO TM/IM/448, Rev. 1: 2023 • Real-time Processing: Required • Chainage Mapping: Mandatory (via axle encoder) Eligibility Open to: • Startups • Entrepreneurs • Academic & research institutions • Industry professionals and R&D organizations • Collaborative consortia involving any of the above Evaluation Criteria • Technical feasibility and innovation – 10 marks • Standards compliance (EN 13848 & RDSO TM/IM/448, Rev. 1:2023) – 40 marks • Hardware robustness, modularity & compactness – 20 marks • Software usability & architecture – 10 marks • Scalability, maintainability & upgradability – 10 marks • Cost-effectiveness – 10 marks Total = 100 marks Deliverables Successful participants must submit: • A fully functional prototype (hardware + software) • Comprehensive technical documentation • Validation report demonstrating standards compliance • Video demonstration (lab/field performance) • Cost analysis and scalability roadmap Conclusion This initiative is a step toward achieving technological independence in railway infrastructure monitoring. By fostering domestic innovation, Indian Railways aims to reduce reliance on foreign systems, cut long-term costs, and deploy tailored solutions better suited to India’s operational context.",
-      "department": "Ministry of Railways",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "21",
-    "organization": "Ministry of Railways",
-    "problem_statement_title": "AI based development of Laser based QR Code marking on 'track fittings on Indian Railways'.",
-    "category": "Hardware",
-    "ps_number": "SIH25021",
-    "submitted_ideas_count": "0",
-    "theme": "Transportation & Logistics",
-    "details": {
-      "problem_statement_id": "25021",
-      "problem_statement": "",
-      "background": "Indian Railways procures about 10 crore Elastic Rail Clips, 5 crore liners, and 8.5 crore rail pads annually. There is currently no system for identification of these track fittings—i.e., elastic rail clips, rail pads, liners—and sleepers, with integration to the UDM portal enabling mobile-based scanning for vendor lot number, date of supply, warranty period, inspection dates, etc. This gap is critical for quality assessment and performance management of fittings. Description This problem statement envisages a unified system for laser-based QR code marking on track fittings to enable mobile scanning and identification of elastic rail clips, rail pads, liners, and sleepers, along with integration to the UDM (User Depot Module) on www.ireps.gov.in and the TMS (Track Management System) on www.irecept.gov.in. With the use of AI, the system should extract all essential details of each fitting item, including inspections at all stages—from manufacturing and supply to in-service performance—and pinpoint exceptions for quality monitoring. Laser-based QR codes are already prevalent in other industries.",
-      "expected_solution": "Innovative solutions are invited through Smart India Hackathon 2025 to develop and implement a system addressing identification of bulk supply materials, their performance issues, and effective inventory management and quality monitoring actions for safety performance of fittings. • Hardware Solution: Design and implement laser-based QR code imprints on bulk supply items of track fittings and sleepers. • Software Solution: Develop QR code linkage and integrate with the UDM and TMS portals; enable mobile scans to generate AI-based reports related to vendor, supply, warranty, inspections, and support inventory management, etc.",
-      "department": "Ministry of Railways",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
     "serial_no": "22",
     "organization": "Ministry of Railways",
     "problem_statement_title": "Maximizing Section Throughput Using Al-Powered Precise Train Traffic Control",
@@ -421,25 +331,6 @@
       "problem_statement": "",
       "background": "Currently, in Ayurvedic hospitals, diet charts are prescribed manually by doctors in handwritten form, tailored to each patient’s needs. Existing software solutions primarily focus on macro- and micro-nutrient tracking but fail to align with Ayurvedic nutritional concepts. This gap creates inefficiencies, reduces accuracy, and makes it harder for practitioners to deliver holistic dietary care rooted in Ayurveda. Detailed Description The problem envisages the development of a dedicated Ayurvedic Diet Management Software designed to efficiently create, manage, and organize patient-specific diet charts with both accuracy and ease. Unlike conventional nutrition tools, the platform will integrate modern nutritional metrics with Ayurvedic dietary principles—such as caloric value, food properties (Hot/Cold, Easy/Difficult to digest), and the six tastes (Rasa).",
       "expected_solution": "The proposed solution should provide an intuitive platform tailored for Ayurvedic dietitians, enabling quick food input, comprehensive nutrient tracking, and Ayurvedic dietary categorization. Key Features: • Scientifically calculated nutrient data for diverse food categories, customized for men, women, and children across all age groups. • A dynamic food database of 8,000+ items covering Indian, multicultural, and international cuisines for wide applicability. • Automated diet chart generation with nutritionally balanced, Ayurveda-compliant plans in a clear, organized format. • Comprehensive patient management module, including profiles with age, gender, dietary habits, meal frequency, bowel movements, water intake, and other critical health parameters. • Recipe-based diet charts with automated nutrient analysis to provide detailed, actionable guidance for patients. Additional Features: • Security & Compliance: Ensure patient data privacy, adhering to health data regulations (e.g., HIPAA or local laws). • User Experience (UX): A clean, user-friendly interface with customization to match Ayurvedic practitioners’ workflows. • Integration Potential: Capability to integrate with hospital information systems (HIS) or electronic health records (EHR). • Mobile Support: Compatibility with mobile and tablet devices for on-the-go usage by doctors and patients. • Reporting Tools: Ability to generate printable diet charts and reports for patient handouts.",
-      "department": "All India Institute of Ayurveda (AIIA)",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "25",
-    "organization": "Ministry of Ayush",
-    "problem_statement_title": "E tongue for Dravya identification",
-    "category": "Hardware",
-    "ps_number": "SIH25025",
-    "submitted_ideas_count": "0",
-    "theme": "MedTech / BioTech / HealthTech",
-    "details": {
-      "problem_statement_id": "25025",
-      "problem_statement": "",
-      "background": "In Ayurveda and other traditional medicine systems, Rasa (taste) is a fundamental criterion for identifying, classifying, and determining the therapeutic value of medicinal herbs. While this taste-based assessment has been effective for centuries, it is inherently subjective, relying on human perception and expert experience, which often leads to variability and inconsistency. In the modern context, ensuring the authenticity, quality, and standardization of herbal raw materials is a critical challenge due to widespread adulteration, batch-to-batch phytochemical variations, and the global demand for reliable herbal products. Recent advances in sensor science and analytical technologies provide innovative solutions to these challenges. Electronic tongue (e-tongue) systems can mimic human gustatory mechanisms by detecting complex chemical signatures, while spectroscopic techniques such as Near-Infrared (NIR), Raman, and UV-Visible spectroscopy offer rapid, non-destructive chemical profiling of herbal samples. When integrated with Artificial Intelligence (AI) and Machine Learning (ML)—such as chemometric modelling, neural networks, and pattern recognition—large datasets can be analyzed to classify herbs based on taste profiles, threshold levels, and phytochemical composition with high precision. This AI-enabled, sensor-integrated approach ensures faster, objective, and cost-effective quality assurance, bridging traditional Ayurvedic principles with modern scientific validation. Detailed Description The problem statement aims to design and develop a sensor-integrated AI-enabled device for objective quality assessment of marketed herbal samples. The device will incorporate: • A multi-sensor e-tongue array to detect basic taste modalities (sweet, sour, salty, bitter, pungent, astringent). • A threshold detection module for quantifying the minimum perceptible concentration of each taste-related compound. • Analytical integration with phytochemical profiling techniques (e.g., HPTLC, FTIR, LC-MS) for correlating taste signatures with chemical constituents.",
-      "expected_solution": "• A portable hardware prototype incorporating an electronic tongue (e-tongue) sensor array. • Calibration using authenticated herb samples and machine learning models trained on large datasets of taste and phytochemical fingerprints. • Smart alerts and decision support for detecting adulteration or substandard quality. • A centralized or cloud-compatible database that updates continuously with new samples and learning outputs. • Applicability across industries including Ayurvedic pharmacopeia standardization, herbal industry quality control, academic research, and regulatory bodies.",
       "department": "All India Institute of Ayurveda (AIIA)",
       "youtube_link": "",
       "dataset_link": "",
@@ -636,44 +527,6 @@
     }
   },
   {
-    "serial_no": "36",
-    "organization": "Ministry of Earth Sciences (MoES)",
-    "problem_statement_title": "Development of Sensor for Detection Of Microplastics",
-    "category": "Hardware",
-    "ps_number": "SIH25036",
-    "submitted_ideas_count": "0",
-    "theme": "Miscellaneous",
-    "details": {
-      "problem_statement_id": "25036",
-      "problem_statement": "",
-      "background": "Microplastics — plastic particles less than 5 mm in size — have emerged as a global environmental threat, contaminating oceans, freshwater systems, and even drinking water. These particles originate from the degradation of larger plastics or from microbeads in consumer products. Their persistence and bioaccumulative nature pose serious risks to aquatic life, ecosystems, and potentially human health. Current methods for detecting microplastics — such as Fourier-transform infrared spectroscopy (FTIR) and Raman spectroscopy — are often accurate but time-consuming, expensive, and laboratory-dependent, limiting their application for real-time, field-based monitoring. Description The project aims to develop a low-cost, efficient, and portable sensor capable of detecting microplastics in various water sources. The focus may be on using optical detection techniques — such as light scattering, fluorescence, or absorbance — combined with machine learning algorithms for pattern recognition. The sensor may be designed to identify microplastic particles based on their optical signatures, size distribution, and possibly polymer type. Water samples shall pass through a detection chamber, where embedded sensors capture spectral or visual data. This information would be processed in real time, either on-device or via a connected application. The system should be tested using standard microplastic samples (e.g., polyethylene, polypropylene) and validated against existing lab-based techniques.",
-      "expected_solution": "The expected outcome is a compact, field-deployable sensor system that can detect and quantify microplastics in water samples within minutes. It should offer reasonable sensitivity (down to 10–100 μm), operate on battery or solar power, and require minimal sample preparation. Additionally, the solution may include a companion software interface for data logging, visualization, and analysis. This innovation should have strong potential for adoption in microplastic monitoring, supporting researchers, environmental agencies, and water quality managers in making faster, data-driven decisions for pollution control and mitigation.",
-      "department": "Ministry of Earth Sciences (MoES)",
-      "youtube_link": "",
-      "dataset_link": "https://cb.imsc.res.in/saopadditives/ https://pmc.ncbi.nlm.nih.gov/articles/PMC10589325/ https://marinedebris.noaa.gov/",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "37",
-    "organization": "Ministry of Earth Sciences (MoES)",
-    "problem_statement_title": "Development of a low-cost camera-based automated beach sand grain size mapping system",
-    "category": "Hardware",
-    "ps_number": "SIH25037",
-    "submitted_ideas_count": "0",
-    "theme": "Miscellaneous",
-    "details": {
-      "problem_statement_id": "25037",
-      "problem_statement": "",
-      "background": "Grain size is a fundamental property used to classify beach types and plays a critical role in influencing coastal morphodynamic processes. However, measuring grain size is particularly challenging, as it requires scientists to visit each site to collect sediment samples. These samples must then undergo time-consuming physical processing in the laboratory to determine their characteristics. Moreover, because beach sediments are dynamic and constantly changing due to wave action, tides, and weather events, this process must be repeated regularly to maintain accurate and up-to-date data. Description The above problem statement envisages that a low-cost camera-based automated mapping system be developed to estimate the sediment grain size distribution of the sandy beach area (i.e., berm, intertidal, and dune) and classify the beach category of the measurement region. A low-cost camera-based mapping system, along with automated prediction algorithms, is used to estimate the sediment grain size distribution of a particular area of interest to be developed. Also, this system should incorporate a GNSS/GPS receiver to map the geographic positions of the measurement location.",
-      "expected_solution": "A low-cost camera-based mapping system with a GNSS/GPS receiver should be developed with an automated image processing algorithm for beach sand grain size estimation/classification. Validation should be performed at least on one sample based on data collected in the area of interest.",
-      "department": "National Centre for Coastal Research (NCCR)",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
     "serial_no": "38",
     "organization": "Ministry of Earth Sciences (MoES)",
     "problem_statement_title": "Blockchain-Based Blue Carbon Registry and MRV System",
@@ -768,25 +621,6 @@
     }
   },
   {
-    "serial_no": "43",
-    "organization": "Ministry of Earth Sciences (MoES)",
-    "problem_statement_title": "Embedded Intelligent Microscopy System for Identification and Counting of Microscopic Marine Organisms",
-    "category": "Hardware",
-    "ps_number": "SIH25043",
-    "submitted_ideas_count": "0",
-    "theme": "Smart Automation",
-    "details": {
-      "problem_statement_id": "25043",
-      "problem_statement": "",
-      "background": "Marine biodiversity assessments rely significantly on microscopic analysis of planktonic organisms, including phytoplankton, zooplankton, and other microscopic marine life. Traditionally, counting and species identification require manual microscopic examination, which is labor-intensive, subjective, and prone to human error. AI-enabled embedded microscopy systems provide an effective alternative by automating the identification, classification, and enumeration of these organisms directly at the point of sampling. Description This problem statement envisages developing an embedded intelligent system that can be integrated directly with microscopic imaging devices used in marine biological studies. The system should leverage embedding-based deep learning techniques to identify and count microscopic marine organisms captured through microscopy images. The embedded platform should be optimized for low computational resources, enabling accurate, rapid, and automated analysis without manual intervention. The solution should specifically handle diverse challenges encountered in microscopic imaging, such as overlapping organisms, variations in morphology, illumination inconsistencies, and imaging artifacts. It must accurately classify and quantify different species present in microscopic images to facilitate marine biodiversity assessments efficiently.",
-      "expected_solution": "An embedded microscopy-integrated AI system featuring: • Lightweight deep learning models deployable on embedded computational hardware. • Automatic species/genus-level identification of microscopic marine organisms from microscopy images. • Accurate and automated counting of individual organisms per species. • Capability for onboard processing, storage, and reporting of species identification and counts for subsequent ecological analysis.",
-      "department": "Centre for Marine Living Resources and Ecology (CMLRE)",
-      "youtube_link": "",
-      "dataset_link": "https://www.seanoe.org/data/00829/94052/ https://opendata.eawag.ch/dataset/deep-learning-classification-of-zooplankton-from- lakes/resource/1cc785fa-36c2-447d-bb11-92ce1d1f3f2d https://figshare.com/articles/dataset/Data_Sheet_1_Deep_Learning_Classification_of_Lake_Zoo plankton_pdf/17010605?file=31465079",
-      "contact_info": ""
-    }
-  },
-  {
     "serial_no": "44",
     "organization": "Government of Odisha",
     "problem_statement_title": "Al-Powered Crop Yield Prediction and Optimization",
@@ -814,40 +648,6 @@
     "details": {
       "problem_statement_id": "25045",
       "problem_statement": "Description Create a blockchain-based system to track agricultural produce from farm to consumer, ensuring transparency in pricing, quality, and origin. The solution should allow stakeholders (farmers, distributors, retailers) to verify transactions and reduce exploitation in the supply chain. Expected Outcome A decentralized platform with a user-friendly interface for farmers and consumers to trace produce, reducing fraud and ensuring fair pricing, deployable on low-cost hardware or cloud infrastructure. Technical Feasibility Leverages existing blockchain frameworks like Ethereum or Hyperledger, with smart contracts for automated tracking and QR code integration for consumer access.",
-      "department": "Electronics & IT Department",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "46",
-    "organization": "Government of Odisha",
-    "problem_statement_title": "Smart Waste Segregation and Recycling System",
-    "category": "Hardware",
-    "ps_number": "SIH25046",
-    "submitted_ideas_count": "0",
-    "theme": "Clean & Green Technology",
-    "details": {
-      "problem_statement_id": "25046",
-      "problem_statement": "Description Design an IoT-enabled waste segregation system using sensors and machine learning to automatically classify household waste (organic, recyclable, hazardous) at the source. The system should integrate with municipal waste management for efficient collection and recycling. Expected Outcome A prototype device with 90% accuracy in waste classification, coupled with a mobile app for households to monitor waste disposal and earn incentives for recycling. Technical Feasibility Uses affordable sensors (e.g., cameras, weight sensors) and ML models (e.g., convolutional neural networks) for waste identification, deployable in urban and semi-urban areas.",
-      "department": "Electronics & IT Department",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "47",
-    "organization": "Government of Odisha",
-    "problem_statement_title": "Disaster Response Drone for Remote Areas",
-    "category": "Hardware",
-    "ps_number": "SIH25047",
-    "submitted_ideas_count": "0",
-    "theme": "Robotics and Drones",
-    "details": {
-      "problem_statement_id": "25047",
-      "problem_statement": "Description Develop a drone-based system to deliver medical supplies and communication devices to remote areas during natural disasters (floods, earthquakes). The drone should use AI for real-time navigation and obstacle avoidance, with a payload capacity of at least 5 kg. Expected Outcome A working drone prototype with a mobile app for disaster management teams to coordinate deliveries, reducing response time by 20% in inaccessible regions. Technical Feasibility Employs existing drone hardware with open-source flight control software (e.g., Ardupilot) and AI algorithms for navigation, tested in simulated disaster scenarios.",
       "department": "Electronics & IT Department",
       "youtube_link": "",
       "dataset_link": "",
@@ -906,23 +706,6 @@
     }
   },
   {
-    "serial_no": "51",
-    "organization": "Government of Odisha",
-    "problem_statement_title": "Renewable Energy Monitoring System for Microgrids",
-    "category": "Hardware",
-    "ps_number": "SIH25051",
-    "submitted_ideas_count": "0",
-    "theme": "Renewable / Sustainable Energy",
-    "details": {
-      "problem_statement_id": "25051",
-      "problem_statement": "Description Develop an IoT-based monitoring system for solar or wind microgrids in rural areas, providing real-time data on energy generation, storage, and consumption. The system should alert users to inefficiencies or maintenance needs. Expected Outcome A hardware-software prototype improving microgrid efficiency by 15%, with a mobile app for community operators to manage energy distribution. Technical Feasibility Employs affordable IoT sensors (e.g., Raspberry Pi, Arduino) and cloud-based analytics for real-time monitoring, compatible with existing microgrid setups.",
-      "department": "Electronics & IT Department",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
     "serial_no": "52",
     "organization": "Government of Odisha",
     "problem_statement_title": "AR-Based Cultural Heritage Preservation Platform",
@@ -934,118 +717,6 @@
       "problem_statement_id": "25052",
       "problem_statement": "Description Create an augmented reality (AR) platform to digitize and preserve India's cultural heritage sites, allowing users to experience virtual tours with historical narratives. The platform should support low-bandwidth access for rural users. Expected Outcome An AR app with 3D models of at least five heritage sites, increasing tourist engagement by 10% and promoting cultural education. Technical Feasibility Uses AR frameworks (e.g., Unity, ARCore) with compressed 3D models for low-bandwidth compatibility, hosted on cloud servers.",
       "department": "Electronics & IT Department",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "53",
-    "organization": "Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",
-    "problem_statement_title": "Improved Onion storage technology for enhancing shelf life of onions",
-    "category": "Hardware",
-    "ps_number": "SIH25053",
-    "submitted_ideas_count": "0",
-    "theme": "Agriculture, FoodTech & Rural Development",
-    "details": {
-      "problem_statement_id": "25053",
-      "problem_statement": "",
-      "background": "The majority of the farmers in India store the onion in naturally ventilated storage structures. In such structures, onions are exposed to extreme temperatures and relative humidity, which reduces the shelf life of onions and high storage loss. Improved onion storage technology will help in ensuring the availability of onions between seasons and obviate seasonal volatility in prices. The solutions could be in the form of improved, but cost-effective, materials and design of storage structures to manage temperature and relative humidity. Description Onion is a semi-perishable vegetable and is harvested during the rabi season, accounting for 65% of onion production, and hits the markets from April to May. The same crop must continue to meet the consumer demand till the month of October-November every year, before the kharif crop is harvested and brought to the market. It is therefore vital to store onions successfully in order to meet the regular supply. It is observed that nearly 30-40% of the crop is lost during storage due to various reasons in form of physiological weight loss, rotting, sprouting etc. In unexpected situations such as natural calamities, the losses even go beyond 50% creating heavy stress both on the demand and supply sides. The losses that occurred during storage are in terms of qualitative as well as in quantitative ways. Hence, it is imperative to take some crucial steps pertaining to onion storage with minimum losses to ensure an adequate supply to the market, thereby reducing the price fluctuations. Various abiotic factors like temperature, relative humidity affect the health of onions; hence, their balance is essential to store the crop with minimum losses. Recent technological advancements (such as Design, Solar/Plasma/Irradiation energy, Nanotechnology, IoT including AI/ML) also offer an opportunity to provide infrastructure for onion storage and supply chain, besides value addition, even in rural India. Design innovations are pervading various sectors, including efficient onion storage at the farm level, rural as well as urban markets. Different process and product development advances will fetch better returns to farmers and competitive prices for consumers. More importantly, it will help in addressing the present as well as the impending challenges.",
-      "expected_solution": "Extension of shelf life with minimum loss.",
-      "department": "Department of Consumer Affairs (DoCA)",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "54",
-    "organization": "Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",
-    "problem_statement_title": "Automated High-Current Short-Circuit Test System for MCB to comply with IEC 60898-1:2015",
-    "category": "Hardware",
-    "ps_number": "SIH25054",
-    "submitted_ideas_count": "0",
-    "theme": "Smart Automation",
-    "details": {
-      "problem_statement_id": "25054",
-      "problem_statement": "",
-      "background": "The safety of electrical installations hinges on reliable Miniature Circuit Breakers (MCBs). IEC 60898-1:2015 mandates rigorous short-circuit breaking capacity tests, crucial for ensuring MCBs perform correctly under severe fault conditions. Existing Problem Current manual or semi-automated testing methods for MCBs introduce significant challenges. These include imprecise R (resistive) and XL (inductive) circuit configurations, increased test times, and elevated safety risks for personnel during high-energy fault current generation (up to 10,000A). This impacts test accuracy, repeatability, and overall safety in the MCB certification process. Detailed Description This proposal outlines an automated machine to precisely control test currents, voltages, and circuit impedance, executing high-current short-circuit tests on single pole, SPN, DP, TP, and FP MCBs (0.5A-63A) per IEC 60898-1:2015. It features an Automated R and XL Circuit Combination Module with high-power, automatically switched banks for precise power factor control. A High-Current Power Source (transformer-based) delivers up to 10,000A. The Test Station includes universal MCB mounting and a critical arc chute for safety. A sophisticated Control and Data Acquisition System (PLC/Industrial PC) manages tests, captures high-speed waveforms, and analyzes data. A user-friendly HMI allows parameter input and automatic report generation. Comprehensive safety systems are integrated.",
-      "expected_solution": "The automated machine will perform MCB breaking capacity tests with unprecedented accuracy and repeatability, fully adhering to IEC 60898-1:2015. This automation will ensure precise parameter control, significantly reduce test times, and enhance safety by minimizing human intervention during high-energy fault conditions. This state-of-the-art facility will provide a reliable platform for MCB certification, contributing directly to electrical safety and quality assurance.",
-      "department": "National Test House,Department of Consumer Affairs",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "55",
-    "organization": "Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",
-    "problem_statement_title": "Automated Specimen Preparation System for testing of Cable samples as per IS 10810 and IS 7098.",
-    "category": "Hardware",
-    "ps_number": "SIH25055",
-    "submitted_ideas_count": "0",
-    "theme": "Miscellaneous",
-    "details": {
-      "problem_statement_id": "25055",
-      "problem_statement": "",
-      "background": "Accurate and consistent preparation of cable specimens is vital for reliable testing according to Indian Standards like IS 10810 (Parts 2, 7, 33) and IS 7098 (Parts 1 & 2). These tests, including conductor resistance, insulation/sheath thickness, and flame retardance, are crucial for ensuring cable safety and quality. Existing Problem Currently, cable sample preparation involves significant manual intervention. The cable sample is manually cut by the operator and then straightened manually. Subsequently, these straightened PVC/XLPE/HDPE cable samples are cut into slices using electrically/pneumatically operated machines. Further, the samples are shaped as dumbbells by a dumbbell cutting machine. These manual and semi-automated steps are time-consuming, prone to human error, and introduce inconsistencies that compromise the accuracy and repeatability of critical test results. Detailed Description This project develops an automated machine designed to precisely cut insulation and outer sheaths from cables, preparing specimens that strictly adhere to the aforementioned IS standards. Key features include an Automated Cable Feeding and Clamping System utilizing motor-driven rollers and adjustable clamps for secure, straightened cable handling. The Cutting and Stripping Module employs precision blades with programmable depths for clean, circumferential cuts and linear stripping, fulfilling specific length requirements for various tests. An integrated diameter sensor will auto-adjust settings. A Control System (PLC/HMI) manages operations, allows test method selection, monitors status, and provides closed-loop feedback. Automated specimen ejection and waste management further streamline workflow. Robust safety features like enclosed areas and interlocks will protect operators.",
-      "expected_solution": "The automated machine will eliminate human error, guaranteeing consistent and repeatable specimen quality while significantly reducing preparation time and costs. By ensuring strict adherence to IS standards, the solution will yield more reliable test results and simplify product certification. This advancement will markedly improve accuracy, efficiency, and safety in cable testing, supporting high-quality control in the cable manufacturing industry.",
-      "department": "National Test House,Department of Consumer Affairs",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "56",
-    "organization": "Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",
-    "problem_statement_title": "To explore new/altermative assaying methods to the fire assay method for testing of gold jewellery and artefacts through non-destructive testing",
-    "category": "Hardware",
-    "ps_number": "SIH25056",
-    "submitted_ideas_count": "0",
-    "theme": "Miscellaneous",
-    "details": {
-      "problem_statement_id": "25056",
-      "problem_statement": "",
-      "background": ": Hallmarking is the accurate determination and official recording of the proportionate content of precious metal in the jewellery/artefacts or bullion/coins. The hallmarking of gold jewellery was started in year 2000 and has been made mandatory since 23 June 2021 and presently covers 361 districts. The Indian Standard, IS 1417 2016 \"Gold and gold alloys, jewellery/artefacts-fineness and marking specification\" covers hallmarking of six grades of gold jewellery/gold artefacts viz. 14K, 18K, 20K, 22K, 23K and 24K carats. The Indian Standard, IS 1418: 2009 \"Determination of gold in gold bullion, gold alloys and gold jewellery/artefacts - Cupellation (Fire Assay) method\" prescribes the fire assay test method for determining the fineness of gold in gold bullion, alloys, and jewellery/artefacts. The fire assay testing method, though globally accepted and accurate, involves a destructive testing process wherein a sample of 250-500 mg is taken from the item by scrapping, drilling, or cutting. The method may lead to the damage of the article, rendering it unsellable, especially when dealing with a few or single article. However, the gold loss incurred during testing is almost negligible. Additionally, the process emits hazardous substances like lead oxides and nitrous fumes. Further, BIS has also formulated an Indian Standard on method of test using ED-XRF (Energy Dispersive X-Ray Fluorescence), i.e., IS 18458: 2023 \"Jewellery and precious metals ED-XRF test - Method of test\". This Indian Standard prescribes a non-destructive testing method to verify the fineness of the gold jewellery. However, the use of ED-XRF as a non-destructive method to determine the fineness is only applicable to homogenous gold jewellery. In addition, IS 18458: 2023 also has a provision for determination of fineness of jewellery by destructive testing, which is more suited for non-homogeneous jewellery. There is another Indian Standard developed by BIS, IS 16901: 2022 \"Jewellery and precious metals determination of high purity gold, platinum and palladium - difference method using ICP-OES\". This method uses ICP-OES and is applicable only for high purity gold (999 ppt and above). ICP-OES is also a destructive testing method. India's gold jewellery industry is highly diverse, encompassing various types such as casted jewellery, handmade pieces with soldered joints, hollow and filled jewellery, gold-plated items, and studded ornaments using various jewellery manufacturing techniques. While casted jewellery is relatively homogeneous, the majority-particularly handmade and hollow varieties-are structurally complex and heterogeneous. This variability presents significant challenges in testing and hallmarking. In the existing fire assay testing method, heterogeneity is addressed by melting the sample before testing. This eliminates impurities and ensures homogeneity. Moreover, fire assay being a difference method (based on initial and final weight of gold sample), the impact of heterogeneity is nullified. However, owing to its destructive nature, there is strong demand for an alternative non-destructive testing method.",
-      "expected_solution": ": a. Develop and implement a non-destructive assaying method that matches the accuracy of fire assay without damaging the jewellery, while being capable of handling heterogeneous compositions (solders, fillers, non-metallic substances). b. Eliminate emissions of harmful substances (lead oxide, nitrous fumes). c. Achieve repeatability close to that of fire assay, ideally within ±0.5 ppt (as per IS 1418). d. Method selected will be validated for regulatory and commercial applications. Deliverables: a. Detailed non-destructive innovative testing method with technical explanation b. References/bibliography related to the technical paper c. Scientific principles underlying the approach d. Feasibility studies and expected challenges e. Methodology for validation including accuracy assessment f. Explanatory note on potential for regulatory and commercial application",
-      "department": "Bureau of Indian Standards (BIS),Department of Consumer Affairs (DoCA)",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "57",
-    "organization": "Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",
-    "problem_statement_title": "Automated Compliance Checker for Legal Metrology Declarations on E-Commerce Platforms",
-    "category": "Hardware",
-    "ps_number": "SIH25057",
-    "submitted_ideas_count": "0",
-    "theme": "Miscellaneous",
-    "details": {
-      "problem_statement_id": "25057",
-      "problem_statement": "",
-      "background": ": With the exponential growth of e-commerce in India and globally, the need to ensure accurate and legally compliant declarations on product listings has become more critical than ever. Under the Legal Metrology (Packaged Commodities) Rules, 2011, all pre-packaged goods sold online must clearly and accurately display information such as: - Name and address of the manufacturer, packer/importer - Net quantity in terms of standard units of weight, measures or number - Retail sale price (MRP) inclusive of all taxes - Consumer care details - Date of manufacture/import - Country of origin Despite regulatory efforts, non-compliance on digital platforms remains widespread due to various reasons. To address this, the Department envisions a smart, scalable and automated solution that can verify declarations in real-time across various e-commerce websites. Problem Description: Develop an AI-powered automated compliance checker that can scan e-commerce platforms for product listings and validate them against mandatory Legal Metrology requirements. The system should: - Extract text from product images using OCR (Optical Character Recognition) - Crawl and scrape data from product listings in real time or batch mode - Validate the information against a customizable rule engine built on Legal Metrology guidelines - Flag non-compliance issues (e.g., missing MRP, incorrect unit, misleading quantity, absence of country of origin, etc.) - Provide a dashboard/reporting tool for regulators to monitor violations and track compliance trends Key Functional Requirements: Data Acquisition: - Web crawling APIs for major e-commerce platforms (Amazon, Flipkart, etc.) - Image recognition to identify and crop relevant label regions OCR & AI: - Multi-language OCR support for label text extraction - Use of computer vision to segment declarations on packaging Rule Engine: - Logical engine to validate each extracted field as per Packaged Commodities Rules - Configurable for rule updates and regional variations Dashboard: - Visual dashboard for regulators showing: • Real-time compliance score • Trends by category, brand, or seller • Exportable violation reports • Geo-tagged compliance heatmaps (if applicable) Scalability & Security: - Cloud-based architecture for large-scale crawling - Secure data logging and access control for regulators Target Participants: - Final year UG (B.Tech/B.E.) students in Electronics, Embedded Systems, Instrumentation, AI/ML, Cybersecurity - PG/Ph.D. researchers in IoT Security, Metrology, Data Forensics - Startups or academia-industry teams working on compliance technologies Evaluation Criteria: - Innovation (Use of novel AI/ML/NLP or scraping techniques) - Accuracy (Precision in identifying compliant and non-compliant listings) - Scalability (Performance on large product databases) - User Experience (Ease of dashboard, actionable reports) - Alignment with Legal Metrology Rules - Regulatory Applicability (Can be deployed by Govt. departments with minimal changes) Expected Deliverables: (a) A working prototype of the compliance checker tool (Web-based or standalone app) (b) Technical documentation including: • Data pipeline design • OCR and ML models used • Validation methodology (c) Sample dataset with annotation (compliant/non-compliant examples) (d) Dashboard demo with live/test crawl outputs (e) Feasibility report for deployment with government bodies Benefits and Impact: - Saves time and effort in manual inspection of product declarations - Promotes fair trade and protects consumers from deceptive practices - Enables data-driven enforcement of Legal Metrology Act - Prepares India for next-gen regulation of digital marketplaces Mentorship and Resources: - Legal Metrology Act and Rules/guidelines/advisories - Access to curated datasets of product images and declarations - Webinars by domain experts from the Ministry/Legal Metrology Division - Access to sandbox e-commerce API for testing solutions Future Prospects: - Integration with a national regulatory enforcement portal - Use as a plug-in for e-commerce portals for real-time seller feedback - The scheme may be evaluated by the officers IILM, Ranchi, RRSLs and LM Hq, Delhi",
-      "department": "Department of Consumer Affairs (DoCA)",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "58",
-    "organization": "Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",
-    "problem_statement_title": "Detection and Prevention of Tampering in Weighing and Measuring instruments",
-    "category": "Hardware",
-    "ps_number": "SIH25058",
-    "submitted_ideas_count": "0",
-    "theme": "Miscellaneous",
-    "details": {
-      "problem_statement_id": "25058",
-      "problem_statement": "",
-      "background": "Weighing and measuring instruments are critical components in trade, industry, health, agriculture, and public safety. They ensure fair transactions and consumer trust when used accurately. However, tampering with such instruments, especially digital weighing scales, fuel dispensers, water/electricity meters, and retail POS systems-leads to fraudulent trade practices, losses to consumers, and damage to the integrity of commerce. Tampering may involve unauthorized hardware modifications, altered firmware, embedded malware, hidden switches, or even remote-control manipulation. These alterations are designed to evade detection by regulators while enabling cheating during operation. Problem Description Develop a robust and intelligent system to detect, prevent, and alert against tampering in weighing and measuring instruments. The system must be capable of identifying both physical and digital tampering attempts in real time or near-real time. It should ideally include an embedded solution with secure logging, alert triggers, and remote verification capability by Legal Metrology officers. The proposed solution may also leverage Al/ML, digital forensics, tamper-evident Hardware seals, blockchain-backed audit trails, or sensor-based integrity checks. Key Functional Requirements Tamper Detection: -Detect unauthorized access to device internals (e.g., seals broken, circuit modifications, etc.) -Monitor anomalies in calibration, weight drift, or suspicious patterns -Firmware Integrity -Secure boot or hash verification for firmware changes -Logging of unauthorized software firmware updates Alert System: -Instant tamper alerts to remote Legal Metrology dashboards -Optional local visual/audio alarms on tamper detection Data Logging & Traceability: -Immutable logs of measurements, maintenance, and access events -Optionally backed by blockchain or secure cloud Remote Monitoring: -IoT integration to transmit logs to a centralized monitoring system -GPS/ geotagging to detect movement of stationary devices Target Participants Final year UG (B.Tech/B.E) students in Electronics, Embedded Systems, Instrumentation, AI/ML. Cybersecurity -PG/Ph.D. researchers in IoT Security, Metrology, Data Forensics -Startups or academia-industry teams working on compliance technologies Evaluation Criteria -Innovation (new methods of detection or prevention) -Accuracy of tamper detection (false positive/negative rates) -Feasibility and cost of integrating the solution into common instruments -User Interface & Regulatory Dashboard usability -Readiness for field deployment and validation Expected Deliverables (a) Prototype device or software module to detect tampering (hardware and/or firmware) (b) Dashboard or interface for regulators to view alerts and device health (c) Tamper-logging and reporting features (d) Validation data from controlled tamper scenarios (e) Whitepaper/ technical documentation describing architecture, logic, limitations and future potential Benefits and Impact -Strengthens consumer protection and fairness in trade -Builds a proactive regulatory ecosystem using smart devices -Reduces inspection burden via automated alerting -Enables certification of tamper-proof weighing/measuring instruments -Contributes to digital trust in India's commerce and metrology infrastructure Mentorship and Resources -Mentorship from Legal Metrology and cybersecuirty experts -Access to LM Act & Rules/ OIML Recommendations, guidelines, testing labs, etc. Future Prospects -Development of National Digital Registry for compliant instruments -Integration with e-maap portal for real-time monitoring -Standardization of tamper-detection modules in certified devices -Development of tamper-proof metrology solutions",
-      "department": "Department of Consumer Affairs (DoCA)",
       "youtube_link": "",
       "dataset_link": "",
       "contact_info": ""
@@ -1104,62 +775,6 @@
       "department": "Department of Higher & Technical Education",
       "youtube_link": "",
       "dataset_link": "required by Govt",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "62",
-    "organization": "Government of Sikkim",
-    "problem_statement_title": "Implementation of Smart Agriculture for Efficient Cultivation in Hilly Regions",
-    "category": "Hardware",
-    "ps_number": "SIH25062",
-    "submitted_ideas_count": "0",
-    "theme": "Agriculture, FoodTech & Rural Development",
-    "details": {
-      "problem_statement_id": "25062",
-      "problem_statement": "",
-      "background": "The agricultural region of Jorethang in South Sikkim experiences harsh, rainless summers and frequent water scarcity, making traditional irrigation unreliable and inefficient. Farmers struggle to provide adequate water to crops, often leading to reduced yields and wasted resources. With climate change intensifying these issues, there's a pressing need for a sustainable, smart irrigation approach that maximizes water efficiency and crop productivity. Integrating rainwater harvesting, sensor-based monitoring, and crop-specific intelligence offers a forward-thinking solution to these regional challenges. Proposed Solution AgroSmart: A Sensor-Based Smart Irrigation System with Crop Intelligence and Rainwater Harvesting. This system aims to provide affordable, automated irrigation tailored to each crop’s needs using soil moisture and environmental sensors. It integrates a rainwater harvesting unit with real-time water level monitoring, ensuring efficient water use even during dry periods. The solution will include: - Soil moisture and temperature sensors to monitor field conditions. - A crop database that determines optimal watering levels. - Automated valve control through microcontrollers (Arduino/ESP32). - Rainwater harvesting with level sensors to track available water. - A mobile/web dashboard for farmers to monitor data and control irrigation remotely. - Alerts and updates via SMS or app to keep farmers informed. Impact Conserves water, improves crop yields, minimizes manual labour, and helps farmers in Jorethang adapt to climate variability with a smart, self-sustaining irrigation system.",
-      "department": "Department of Higher & Technical Education",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "63",
-    "organization": "Government of Kerala",
-    "problem_statement_title": "Developing a cost effective solution for detecting the breakage of Low Voltage AC Distribution Over Head conductors",
-    "category": "Hardware",
-    "ps_number": "SIH25063",
-    "submitted_ideas_count": "0",
-    "theme": "Disaster Management",
-    "details": {
-      "problem_statement_id": "25063",
-      "problem_statement": "",
-      "background": "A cost-effective solution is required for detecting the breakage of Low Voltage AC Distribution Over Head conductors towards isolating the source of supply to prevent hazardous electric shock scenarios to the public, while also sending alarms to the concerned section office for immediate fault rectification. Recently, several cases of accidental deaths of children and adults due to electrocution from broken live conductors lying on the ground were reported in Kerala. Low voltage distribution lines often snap due to falling trees during natural calamities and also due to aging or corrosion. This dangerous condition is not detected or isolated by upstream fuses in these feeders because of high earth resistance and low fault current, leading to electrocution deaths when people come into contact with live bare conductors. Many existing solutions identified so far are not cost-effective or viable for the vast distribution network.",
-      "expected_solution": "An innovative solution based on IoT and AI, including edge intelligence, may provide an economical and scalable solution for this socially relevant problem faced by KSEBL.",
-      "department": "Kerala State Electricity Board Limited (KSEBL)",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "64",
-    "organization": "Government of Kerala",
-    "problem_statement_title": "Improving the Renewable Energy hosting capacity in Distribution Feeders improving the Power quality of Distribution network during high RE injection",
-    "category": "Hardware",
-    "ps_number": "SIH25064",
-    "submitted_ideas_count": "0",
-    "theme": "Renewable / Sustainable Energy",
-    "details": {
-      "problem_statement_id": "25064",
-      "problem_statement": "",
-      "background": "Kerala has a large penetration of Roof Top Solar PV systems amounting to nearly 1500 MW. These systems are connected to low voltage distribution feeders either in single-phase or three-phase mode. A majority of the systems are below 5 kW and hence get connected in single-phase, which causes severe unbalanced loading in feeders and results in an uneven voltage profile. This unbalanced loading also limits the quantum of PV that can be integrated into the network. Any load balancing work carried out during daytime under PV injection gets negated during the evening peak hours when solar power is unavailable. This situation calls for a solution that can dynamically reconfigure the network based on renewable energy (RE) injection and local demand scenarios.",
-      "expected_solution": "A cost-effective controller incorporating IoT and edge intelligence can be developed at the local node level for auto-balancing of the load across various phases in a feeder under the above conditions.",
-      "department": "Kerala State Electricity Board Limited (KSEBL)",
-      "youtube_link": "",
-      "dataset_link": "",
       "contact_info": ""
     }
   },
@@ -1291,25 +906,6 @@
     }
   },
   {
-    "serial_no": "72",
-    "organization": "Ministry of Mines",
-    "problem_statement_title": "Design and Implementation of Solar-Powered Dewatering in Mining Operations.",
-    "category": "Hardware",
-    "ps_number": "SIH25072",
-    "submitted_ideas_count": "0",
-    "theme": "Renewable / Sustainable Energy",
-    "details": {
-      "problem_statement_id": "25072",
-      "problem_statement": "",
-      "background": "The current dewatering system at our copper mining site relies heavily on electrically operated pumps, often supplemented by diesel generators during power outages. This traditional setup not only leads to high operational expenses due to electricity and fuel consumption, but also contributes to increased carbon emissions, operational complexity, and maintenance challenges. In light of rising energy costs and the need for reliable and sustainable mine dewatering solutions, there is a pressing need to explore alternative approaches. Solar-powered dewatering systems offer a viable solution, leveraging renewable energy to reduce costs, ensure consistent pump operation, and support broader environmental and sustainability goals. Implementing such systems under an OPEX (Operational Expenditure) model aligns with the strategy to minimize capital expenditure while transitioning to cleaner and more efficient mining practices. Problem This outlines the implementation of solar-powered dewatering pumps at the copper mining site under an OPEX model. The system will integrate solar photovoltaic (PV) modules with energy-efficient submersible or surface pumps, designed to meet site-specific dewatering requirements. A third-party vendor will be engaged to install, operate, and maintain the system through a Power Purchase Agreement (PPA) or operational lease, eliminating the need for upfront capital investment by HCL. The system can be configured as stand-alone solar or hybrid (solar with grid/diesel backup) to ensure uninterrupted pumping. The proposed solution aims to reduce operational energy costs, enhance dewatering reliability, and support environmental commitments by minimizing diesel use and lowering carbon emissions. Technical specifications are attached.",
-      "expected_solution": "Deployment of solar-powered, energy-efficient dewatering pumps under an OPEX model to ensure reliable, low-cost, and eco-friendly mine dewatering. The system will reduce diesel and electricity usage, include hybrid backup, and feature vendor-managed operation and maintenance.",
-      "department": "Hindustan Copper Limited (HCL)",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
     "serial_no": "73",
     "organization": "Ministry of Youth Affairs and Sports",
     "problem_statement_title": "Al-Powered Mobile Platform for Democratizing Sports Talent Assessment",
@@ -1373,23 +969,6 @@
       "problem_statement_id": "25076",
       "problem_statement": "Problem Farmers often face critical questions related to pests, weather, inputs, subsidies, and market trends—but timely expert advice is rarely accessible. Agri officers and helplines are overburdened, and existing services don’t scale to support individual needs across diverse regions, languages, and literacy levels. Challenge Build an AI-powered advisory system that allows farmers to ask queries in their own language (preferably Malayalam) and receive accurate, context-aware answers instantly. Core Features - Natural Language Query Handling: Farmers can ask questions via voice or text in Malayalam—e.g., “Which pesticide for leaf spot in my banana?” - Multimodal Inputs: Support for image uploads (e.g., diseased crop photo) or voice notes. - AI-Powered Knowledge Engine: Use LLMs and fine-tuned agri datasets to provide reliable, tailored answers—drawing from local crop calendars, pest advisories, weather, and scheme guidelines. - Context Awareness: Factor in the farmer’s location, crop, season, and history (if known) to give personalized advice. - Escalation System: For complex or unclear queries, escalate to local agri officers with context and suggestions. - Learning Loop: Continuously improve the system using real queries, feedback, and local expert inputs. Expected Impact - Makes expert-level farming advice instantly accessible to all. - Bridges the communication gap between farmers and extension systems. - Supports Krishibhavans and Agri Departments by automating first-level support. This system aims to become a “Digital Krishi Officer”—always available, always learning, and always farmer-first.",
       "department": "Department of Agriculture",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "77",
-    "organization": "Government of Kerala",
-    "problem_statement_title": "A hardware that can detect and prevent unauthorized use of electric fences",
-    "category": "Hardware",
-    "ps_number": "SIH25077",
-    "submitted_ideas_count": "0",
-    "theme": "Smart Automation",
-    "details": {
-      "problem_statement_id": "25077",
-      "problem_statement": "A hardware that can detect and prevent unauthorized use of electric fences",
-      "department": "Kerala State Electricity Board Limited (KSEBL)",
       "youtube_link": "",
       "dataset_link": "",
       "contact_info": ""
@@ -1481,57 +1060,6 @@
     }
   },
   {
-    "serial_no": "83",
-    "organization": "Government of Kerala",
-    "problem_statement_title": "Earthquake stabilised dialysis system for patient safety during seismic events.",
-    "category": "Hardware",
-    "ps_number": "SIH25084",
-    "submitted_ideas_count": "0",
-    "theme": "Disaster Management",
-    "details": {
-      "problem_statement_id": "25084",
-      "problem_statement": "India's substantial chronic kidney disease patient population relies on dialysis services available from sub divisional level hospitals to specialist Centres including mobile units. Current dialysis infrastructure lacks earthquake resistant technology, potentially resulting in treatment interruption and patient mortality during seismic events. A stabilisation system would ensure continuous dialysis delivery during earthquake, safeguarding patient's life.",
-      "department": "HEALTH SERVICE DEPARTMENT",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "84",
-    "organization": "Government of Kerala",
-    "problem_statement_title": "Solution for NON-REVENUE LOSS IN WATER SUPPLY Solution to improve AWARENESS IN WATER CONSERVATION TREATMENT OF WASTE WATER AND REUSE FOR DOMESTIC PURPOSES",
-    "category": "Hardware",
-    "ps_number": "SIH25085",
-    "submitted_ideas_count": "0",
-    "theme": "Miscellaneous",
-    "details": {
-      "problem_statement_id": "25085",
-      "problem_statement": "Solution for NON-REVENUE LOSS IN WATER SUPPLY Solution to improve AWARENESS IN WATER CONSERVATION TREATMENT OF WASTE WATER AND REUSE FOR DOMESTIC PURPOSES",
-      "department": "KERALA RURAL WATER SUPPLY AND SANITATION AGENCY, WATER RESOURCES DEPARTMENT, GOVERNMENT OF KERALA",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "85",
-    "organization": "Government of Kerala",
-    "problem_statement_title": "GREY WATER MANAGEMENT AND REUSE WET LAND MANAGEMENT WATER CONSERVATION",
-    "category": "Hardware",
-    "ps_number": "SIH25090",
-    "submitted_ideas_count": "0",
-    "theme": "Clean & Green Technology",
-    "details": {
-      "problem_statement_id": "25090",
-      "problem_statement": "GREY WATER MANAGEMENT AND REUSE WET LAND MANAGEMENT WATER CONSERVATION",
-      "department": "KERALA RURAL WATER SUPPLY AND SANITATION AGENCY, WATER RESOURCES DEPARTMENT, GOVERNMENT OF KERALA",
-      "youtube_link": "",
-      "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
     "serial_no": "86",
     "organization": "Government of Jammu and Kashmir",
     "problem_statement_title": "AI-Based Timetable Generation System aligned with NEP 2020 for Multidisciplinary Education Structures",
@@ -1602,40 +1130,6 @@
       "department": "Higher Education Department",
       "youtube_link": "https://youtu.be/YNZt9WnEjfM?feature=shared",
       "dataset_link": "",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "90",
-    "organization": "Autodesk",
-    "problem_statement_title": "Research and redesign a sport equipment commonly found in sport industry and utilize Fusion software to reimagine its design. Students can use Fusion Features such as Generative Design, Topology Optimization, Additive Build etc. The redesigned component should showcase innovation, enhanced functionality, and improved efficiency, all while being optimized for 3D printing.",
-    "category": "Hardware",
-    "ps_number": "SIH25095",
-    "submitted_ideas_count": "0",
-    "theme": "Smart Education",
-    "details": {
-      "problem_statement_id": "25095",
-      "problem_statement": "The student's focus should be on using Fusion's additive manufacturing capabilities. They should aim to learn about additive manufacturing and its applications in aerospace design. This includes studying how to design aerospace components with considerations for structural integrity, and weight reduction. They should define project objectives and design constraints and then utilize generative design tools in Fusion to explore and generate optimized designs. The student should evaluate these designs using simulation and analysis tools within Fusion. They should refine and iterate on the designs to further enhance performance. Finally, they should prototype and test the finalized design using appropriate 3D printing technologies.",
-      "department": "Autodesk",
-      "youtube_link": "",
-      "dataset_link": "https://sih.gov.in/dataset/PSID_25095_AUTODESK_PS1Hardware.pdf",
-      "contact_info": ""
-    }
-  },
-  {
-    "serial_no": "91",
-    "organization": "Autodesk",
-    "problem_statement_title": "• Students are supposed to use Fusion software to generate NC code with machine details & tool library for any industrial component. • Students should possess technical skills in areas such as CAD/CAM software, G-code programming, toolpath optimization, and machining fundamentals. Additionally, their project ideas should demonstrate a viable solution to a real-world problem, ensuring feasibility and practicality in implementation.",
-    "category": "Hardware",
-    "ps_number": "SIH25096",
-    "submitted_ideas_count": "0",
-    "theme": "Smart Education",
-    "details": {
-      "problem_statement_id": "25096",
-      "problem_statement": "Computer-Aided Manufacturing (CAM) is the use of software and computer-controlled machinery to automate a manufacturing process. Based on that definition, you need three components for a CAM system to function: Software that tells a machine how to make a product by generating toolpaths. Machinery that can turn raw material into a finished product. Post Processing converts toolpaths into a language machine can understand. From high efficiency roughing with Adaptive Clearing to simplified control of multi-axis machines with Tool Orientation.",
-      "department": "Autodesk",
-      "youtube_link": "",
-      "dataset_link": "https://sih.gov.in/dataset/PSID_25096_AUTODESK_PS2HardwareCnC.pdf",
       "contact_info": ""
     }
   },

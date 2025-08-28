@@ -7,12 +7,12 @@ def clean_text(text):
         return re.sub(r'\s+', ' ', text).strip()
     return ""
 
+
 def parse_modal_text(modal_soup):
     details = {}
     if not modal_soup:
         return details
 
- 
     detail_rows = modal_soup.find_all('tr')
     
     for row in detail_rows:
@@ -23,28 +23,22 @@ def parse_modal_text(modal_soup):
             key = clean_text(header_tag.get_text()).lower().replace(' ', '_')
          
             if key == 'description':
-             
                 description_div = data_tag.find('div', class_='style-2')
                 if description_div:
-         
                     for br in description_div.find_all("br"):
                         br.replace_with("\n")
                     
                     full_text = clean_text(description_div.get_text())
                     
-       
                     parts = re.split(r'(Background|Expected Solution)', full_text)
                     
-                 
                     details['problem_statement'] = clean_text(parts[0].replace('Problem Statement', ''))
                     
-               
                     for i in range(1, len(parts), 2):
                         section_key = clean_text(parts[i]).lower().replace(' ', '_')
                         section_value = clean_text(parts[i+1])
                         details[section_key] = section_value
             else:
- 
                 details[key] = clean_text(data_tag.get_text())
 
     return details
@@ -94,7 +88,7 @@ def extract_problem_statements(html_file_path='sih2025.html'):
             if modal_soup:
                 modal_details = parse_modal_text(modal_soup)
         
-        problem_statements.append({
+        entry = {
             "serial_no": serial_no,
             "organization": organization,
             "problem_statement_title": problem_statement_title,
@@ -103,9 +97,35 @@ def extract_problem_statements(html_file_path='sih2025.html'):
             "submitted_ideas_count": submitted_ideas_count,
             "theme": theme,
             "details": modal_details
-        })
+        }
+
+        # ✅ Clean duplicates before appending
+        entry = clean_entry(entry)
+        problem_statements.append(entry)
 
     return problem_statements
+
+
+# Keys that should not be repeated inside details
+DUPLICATE_KEYS = {
+    "organization",
+    "category",
+    "theme",
+    "ps_number",
+    "problem_statement_title"
+}
+
+def clean_entry(entry):
+    """Remove duplicate keys from 'details' that are already in parent."""
+    details = entry.get("details", {})
+    if isinstance(details, dict):
+        cleaned_details = {}
+        for k, v in details.items():
+            if k not in DUPLICATE_KEYS:  # skip duplicates
+                cleaned_details[k] = v
+        entry["details"] = cleaned_details
+    return entry
+
 
 def main():
     """Main function to run the scraper."""
@@ -121,6 +141,7 @@ def main():
         print(json.dumps(problem_statements[0], indent=2, ensure_ascii=False))
     else:
         print("\nNo problem statements were extracted.")
+
 
 if __name__ == "__main__":
     main()
