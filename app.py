@@ -114,7 +114,7 @@ def call_gemini(query, hits):
         return "\n".join(lines)
 
     contexts = build_compact_context(hits)
-    system = "You are Rana, an assistant specialized in explaining SIH (Smart India Hackathon) problem statements."
+    system = "You are Meera, an assistant specialized in explaining SIH (Smart India Hackathon) problem statements."
     user_content = (
         f"User query: {query}\n\nRelevantEntries:\n"
         f"{json.dumps(contexts, ensure_ascii=False, indent=2)}\n\n"
