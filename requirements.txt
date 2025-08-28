@@ -1,0 +1,6 @@
+chainlit==1.0.402
+python-dotenv==1.0.1
+openai==1.25.2
+requests
+fake_useragent
+beautifulsoup4
