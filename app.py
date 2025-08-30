@@ -180,29 +180,32 @@ async def on_chat_start():
     if api_key:
         cl.user_session.set("api_key", api_key)
     
-    # Send welcome message - emphasizing API key requirement
+    # Send welcome message - emphasizing two-step setup
     welcome_msg = """🚀 **Welcome to SIH Chatbot - Meera**
 
 🔒 **AUTHENTICATION REQUIRED**
 
 This chatbot requires a valid API key to access Smart India Hackathon problem statements and provide AI-powered assistance.
 
-**🔑 Quick Setup:**
-1. **Get an API key** from your preferred provider:
-   - **Gemini** (Recommended): https://makersuite.google.com/app/apikey
-   - **OpenAI**: https://platform.openai.com/api-keys  
-   - **Groq**: https://console.groq.com/keys
+**🎯 Two-Step Setup Process:**
 
-2. **Set your API key**: `/setkey your_api_key_here`
+**Step 1: Choose Your AI Provider**
+- `/provider Gemini` (Recommended - Free tier available)
+- `/provider OpenAI` (Requires paid account)
+- `/provider Groq` (Fast and free)
 
-3. **Optional - Change provider**: `/provider Gemini` (or OpenAI/Groq)
+**Step 2: Get Your API Key**
+After choosing provider, I'll give you the specific link for that provider.
+
+**Step 3: Set Your API Key**
+`/setkey your_api_key_here`
 
 **🚨 Important:** 
-- No data access without API key
-- All searches and responses require authentication
+- Complete both steps to unlock the chatbot
 - Your API key is stored securely in your session
+- No data access without authentication
 
-**Need help?** Type `/help` after setting your API key."""
+**Need help?** Type `/help` for more information."""
 
     await cl.Message(content=welcome_msg).send()
 
@@ -213,31 +216,77 @@ async def main(message: cl.Message):
     
     # Handle configuration commands
     if user_query.startswith("/setkey "):
+        # Check if provider is selected first
+        provider = cl.user_session.get("provider")
+        if not provider:
+            await cl.Message(
+                content="⚠️ **Please select a provider first!**\n\n"
+                       "Choose your AI provider:\n"
+                       "- `/provider Gemini` (Recommended - Free)\n"
+                       "- `/provider OpenAI` (Paid account required)\n"  
+                       "- `/provider Groq` (Fast and free)\n\n"
+                       "Then set your API key with `/setkey your_api_key_here`"
+            ).send()
+            return
+        
         api_key = user_query[8:].strip()
         if len(api_key) < 10:
             await cl.Message(content="❌ **Invalid API key**\n\nAPI key seems too short. Please provide a valid key.").send()
             return
         
         cl.user_session.set("api_key", api_key)
-        provider = cl.user_session.get("provider", "Gemini")
+        
         await cl.Message(
-            content=f"✅ **API Key set successfully!**\n\n"
-                   f"Provider: {provider}\n"
-                   f"You can now get AI-powered responses. Try asking about problem statements!"
+            content=f"🎉 **Setup Complete!**\n\n"
+                   f"✅ **Provider:** {provider}\n"
+                   f"✅ **API Key:** Set successfully\n\n"
+                   f"🚀 **You're ready to go!** Try searching:\n"
+                   f"- `healthcare problems`\n"
+                   f"- `blockchain solutions`\n"  
+                   f"- `SIH25001`\n\n"
+                   f"Type `/help` for more commands!"
         ).send()
         return
     
     elif user_query.startswith("/provider "):
         provider = user_query[10:].strip()
+        
+        # Normalize provider names and provide specific information
         if provider.lower() == "openai":
             provider = "OpenAI"
+            api_link = "https://platform.openai.com/api-keys"
+            note = "Requires paid account with credits"
+            model_info = "Uses GPT-3.5-turbo model"
         elif provider.lower() == "groq":
             provider = "Groq"
+            api_link = "https://console.groq.com/keys"
+            note = "Free tier available - Very fast responses"
+            model_info = "Uses Llama3-8B model"
         else:
             provider = "Gemini"
+            api_link = "https://makersuite.google.com/app/apikey"
+            note = "Free tier available - Recommended for beginners"
+            model_info = "Uses Gemini-2.0-flash-exp model"
         
         cl.user_session.set("provider", provider)
-        await cl.Message(content=f"✅ **Provider set to {provider}**\n\nMake sure your API key is compatible with this provider.").send()
+        
+        response = f"""✅ **Provider set to {provider}**
+
+**🔑 Now get your API key:**
+1. Visit: {api_link}
+2. Create/Login to your account
+3. Generate a new API key
+4. Copy the key
+
+**💡 Provider Info:** 
+- {note}
+- {model_info}
+
+**⏭️ Next step:** `/setkey your_api_key_here`
+
+**📝 Note:** Make sure to copy the complete API key including any prefixes (like 'sk-' for OpenAI)"""
+        
+        await cl.Message(content=response).send()
         return
     
     elif user_query.startswith("/results "):
@@ -252,9 +301,34 @@ async def main(message: cl.Message):
             await cl.Message(content="❌ **Invalid format**\n\nUse: `/results 5`").send()
         return
     
-    # Handle help and info commands
+    # Handle help and info commands - Only allow basic help without API key
     elif user_query.lower() in ["/help", "help"]:
-        help_msg = """📚 **SIH Chatbot Help**
+        api_key = cl.user_session.get("api_key") or os.getenv("API_KEY")
+        
+        if not api_key:
+            # Limited help for unauthenticated users
+            help_msg = """🔒 **Authentication Required**
+
+**🔑 Two-Step Setup Process:**
+
+**Step 1: Choose AI Provider**
+- `/provider Gemini` - Google's AI (Free, recommended)
+- `/provider OpenAI` - ChatGPT provider (Paid account required)  
+- `/provider Groq` - Fast AI responses (Free)
+
+**Step 2: Get API Key & Set It**
+After choosing provider, I'll give you the specific link for that provider, then:
+- `/setkey your_api_key_here`
+
+**📋 Provider Comparison:**
+- **Gemini**: Best for beginners, generous free tier
+- **OpenAI**: Most popular, requires payment
+- **Groq**: Fastest responses, free tier available
+
+**🚨 Complete both steps to unlock the chatbot!**"""
+        else:
+            # Full help for authenticated users
+            help_msg = """📚 **SIH Chatbot Help**
 
 **🔧 Configuration Commands:**
 - `/setkey your_key` - Set API key
@@ -276,34 +350,69 @@ async def main(message: cl.Message):
 **💡 Tips:**
 - Be specific in your queries for better results
 - Use PS numbers for exact matches
-- Ask for implementation ideas after finding a problem
-- Set your API key first for AI-powered responses"""
+- Ask for implementation ideas after finding a problem"""
 
         await cl.Message(content=help_msg).send()
         return
     
     elif user_query.lower() in ["/config", "config"]:
+        # Check setup progress
+        provider_set = cl.user_session.get("provider") is not None
         api_key = cl.user_session.get("api_key")
-        provider = cl.user_session.get("provider", "Gemini")
+        provider = cl.user_session.get("provider", "None")
         top_k = cl.user_session.get("top_k", 3)
         show_details = cl.user_session.get("show_details", True)
         
+        # Calculate setup progress
+        setup_steps = 0
+        if provider_set: setup_steps += 1
+        if api_key: setup_steps += 1
+        
+        setup_status = f"{setup_steps}/2 Complete"
+        if setup_steps == 2:
+            setup_status += " ✅"
+        elif setup_steps == 1:
+            setup_status += " ⚠️"
+        else:
+            setup_status += " ❌"
+        
         config_info = f"""🔧 **Current Configuration:**
 
-- **AI Provider:** {provider}
-- **API Key:** {'✅ Set' if api_key else '❌ Not set'}
+**Setup Progress:** {setup_status}
+
+- **Step 1 - AI Provider:** {'✅ ' + provider if provider_set else '❌ Not selected'}
+- **Step 2 - API Key:** {'✅ Set' if api_key else '❌ Not set'}
+
+**Other Settings:**
 - **Results Count:** {top_k}
 - **Show Details:** {'Yes' if show_details else 'No'}
 
-**To update:**
-- `/setkey your_api_key` - Set API key
-- `/provider Gemini` - Change provider
-- `/results 5` - Change result count"""
+**To complete setup:**"""
+
+        if setup_steps == 2:
+            config_info += "\n✅ **Ready to use! Start searching for problem statements.**"
+        elif setup_steps == 1 and not api_key:
+            config_info += f"\n⏭️ **Next:** `/setkey your_api_key_here`"
+        else:
+            config_info += "\n⏭️ **Next:** `/provider Gemini` (choose provider first)"
+        
+        config_info += "\n\n**To update:**\n- `/provider Gemini` - Change provider\n- `/setkey new_key` - Update API key\n- `/results 5` - Change result count"
         
         await cl.Message(content=config_info).send()
         return
     
     elif user_query.lower() in ["/stats", "stats"]:
+        api_key = cl.user_session.get("api_key") or os.getenv("API_KEY")
+        provider_set = cl.user_session.get("provider") is not None
+        
+        if not api_key or not provider_set:
+            current_status = f"Provider {'✅' if provider_set else '❌'}, API Key {'✅' if api_key else '❌'}"
+            await cl.Message(
+                content=f"🔒 **Setup Required**\n\n❌ Complete the 2-step setup to access dataset information.\n\n**Current Status:** {current_status}\n\n**Next Steps:**\n" +
+                        (f"- `/setkey your_api_key_here`" if provider_set and not api_key else "- `/provider Gemini` (choose provider first)")
+            ).send()
+            return
+            
         themes = set(item.get("theme", "") for item in DATA if item.get("theme"))
         categories = set(item.get("category", "") for item in DATA if item.get("category"))
         orgs = set(item.get("organization", "") for item in DATA if item.get("organization"))
@@ -318,6 +427,17 @@ async def main(message: cl.Message):
         return
     
     elif user_query.lower() in ["/themes", "themes"]:
+        api_key = cl.user_session.get("api_key") or os.getenv("API_KEY")
+        provider_set = cl.user_session.get("provider") is not None
+        
+        if not api_key or not provider_set:
+            current_status = f"Provider {'✅' if provider_set else '❌'}, API Key {'✅' if api_key else '❌'}"
+            await cl.Message(
+                content=f"🔒 **Setup Required**\n\n❌ Complete the 2-step setup to browse themes.\n\n**Current Status:** {current_status}\n\n**Next Steps:**\n" +
+                        (f"- `/setkey your_api_key_here`" if provider_set and not api_key else "- `/provider Gemini` (choose provider first)")
+            ).send()
+            return
+            
         themes = sorted(set(item.get("theme", "") for item in DATA if item.get("theme")))
         theme_list = "\n".join([f"- {theme}" for theme in themes[:20]])  # Show first 20
         
@@ -326,8 +446,26 @@ async def main(message: cl.Message):
         ).send()
         return
     
-    # Handle regular search queries
+    # Handle regular search queries - REQUIRE BOTH PROVIDER AND API KEY
     api_key = cl.user_session.get("api_key") or os.getenv("API_KEY")
+    provider_set = cl.user_session.get("provider") is not None
+    
+    # Block all searches without complete setup
+    if not api_key or not provider_set:
+        current_status = f"Provider {'✅' if provider_set else '❌'}, API Key {'✅' if api_key else '❌'}"
+        
+        await cl.Message(
+            content="🔒 **Access Denied - Setup Required**\n\n"
+                   "❌ Please complete the 2-step setup to search problem statements:\n\n"
+                   "**Step 1:** `/provider Gemini` (or OpenAI/Groq)\n"
+                   "**Step 2:** `/setkey your_api_key_here`\n\n"
+                   f"**Current Status:** {current_status}\n\n" +
+                   ("**⏭️ Next:** `/setkey your_api_key_here`" if provider_set and not api_key else 
+                    "**⏭️ Next:** `/provider Gemini` (choose provider first)") +
+                   "\n\n🔐 *Complete both steps to unlock the chatbot.*"
+        ).send()
+        return
+    
     provider = cl.user_session.get("provider", "Gemini")
     top_k = cl.user_session.get("top_k", 3)
     
