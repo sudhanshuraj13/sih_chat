@@ -1,9 +1,28 @@
-.env
-sih.html
-# Vector stores
-faiss_vectorstore/
+# Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*.so
+
+# Virtual environments
 venv/
+env/
+ENV/
+
+# Environment variables
 .env
+
+# Vector stores and large files
+faiss_vectorstore/
+*.faiss
+*.pkl
+chroma_db/
+sih.html
+
+# IDE
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Logs
+*.log
