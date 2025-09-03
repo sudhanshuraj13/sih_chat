@@ -1,0 +1,12 @@
+python-dotenv==1.0.1
+requests
+fake_useragent
+beautifulsoup4
+
+# RAG System Dependencies - Python 3.13 64-bit compatible (Updated versions)
+langchain>=0.3.0
+langchain_community>=0.3.0
+langchain_core>=0.3.0
+langchain-google-genai>=2.0.0
+faiss-cpu>=1.8.0
+numpy>=2.0.0
