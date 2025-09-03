@@ -19,9 +19,7 @@ sih_chat_RAG/
 │   ├── processed_sih_documents.json
 │   ├── sih_complete_dataset.json
 │   └── sih_problem_statements_all_years.json
-├── faiss_vectorstore/             # Vector database
-│   ├── index.faiss
-│   └── index.pkl
+|
 ├── chain_sih.py                   # RAG chain implementation
 ├── context_sih.py                 # Prompt templates
 ├── vector_sih.py                  # Vector store operations
