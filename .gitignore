@@ -1,2 +1,9 @@
 .env
 sih.html
+# Vector stores
+faiss_vectorstore/
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
