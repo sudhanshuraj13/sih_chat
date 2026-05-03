@@ -1,0 +1,37 @@
+{
+  "name": "sih-chat",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "ingest": "npx tsx scripts/ingest.ts",
+    "scrape-ps": "npx tsx scripts/scrape-ps.ts",
+    "scrape-general": "npx tsx scripts/scrape-general.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/groq": "^3.0.38",
+    "@ai-sdk/react": "^3.0.176",
+    "@xenova/transformers": "^2.0.1",
+    "ai": "^6.0.174",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.378.0",
+    "next": "^16.2.4",
+    "playwright": "^1.59.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "vectra": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
+  }
+}
