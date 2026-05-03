@@ -12,7 +12,9 @@
     "scrape-general": "npx tsx scripts/scrape-general.ts"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.67",
     "@ai-sdk/groq": "^3.0.38",
+    "@ai-sdk/openai": "^3.0.58",
     "@ai-sdk/react": "^3.0.176",
     "@xenova/transformers": "^2.0.1",
     "ai": "^6.0.174",

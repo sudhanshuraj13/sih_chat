@@ -1,100 +1,226 @@
 "use client";
 
-import { useChat } from "@ai-sdk/react";
-import { Send, Bot, User, AlertCircle, Settings, X, Key } from "lucide-react";
+import { Send, Bot, User, AlertCircle, Settings, X, Key, ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+type Message = {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+};
+
+type ApiConfig = {
+  provider: string;
+  model: string;
+  key: string;
+};
+
+const PROVIDERS: Record<string, { name: string; models: string[] }> = {
+  groq:   { name: "Groq",   models: ["llama-3.3-70b-versatile", "mixtral-8x7b-32768", "gemma2-9b-it"] },
+  openai: { name: "OpenAI", models: ["gpt-4o", "gpt-4o-mini", "gpt-3.5-turbo"] },
+  google: { name: "Google", models: ["gemini-2.5-pro", "gemini-2.5-flash"] },
+};
+
+const DEFAULT_CONFIG: ApiConfig = { provider: "groq", model: "llama-3.3-70b-versatile", key: "" };
+
 export default function Chat() {
-  const [apiKey, setApiKey] = useState("");
+  // ─── State ───
+  const [apiConfig, setApiConfig] = useState<ApiConfig>(DEFAULT_CONFIG);
+  const [tempConfig, setTempConfig] = useState<ApiConfig>(DEFAULT_CONFIG);
   const [showSettings, setShowSettings] = useState(false);
-  const [tempKey, setTempKey] = useState("");
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [chatInput, setChatInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  // Load API key from local storage on mount
-  useEffect(() => {
-    const savedKey = localStorage.getItem("groq_api_key");
-    if (savedKey) {
-      setApiKey(savedKey);
-      setTempKey(savedKey);
-    }
-  }, []);
-
-  const { messages, sendMessage, status, error } = useChat({
-    api: "/api/chat",
-    headers: apiKey ? { "x-groq-api-key": apiKey } : undefined,
-  });
-
-  const [input, setInput] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const isLoading = status === "streaming" || status === "submitted";
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
+  // ─── Load saved config on mount ───
   useEffect(() => {
-    scrollToBottom();
+    try {
+      const saved = localStorage.getItem("api_config");
+      if (saved) {
+        const parsed = JSON.parse(saved) as ApiConfig;
+        setApiConfig(parsed);
+        setTempConfig(parsed);
+      }
+    } catch {}
+  }, []);
+
+  // ─── Auto-scroll to latest message ───
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
-    sendMessage({ text: input });
-    setInput("");
-  };
-
-  const saveApiKey = () => {
-    setApiKey(tempKey);
-    localStorage.setItem("groq_api_key", tempKey);
+  // ─── Save settings ───
+  const saveConfig = () => {
+    setApiConfig(tempConfig);
+    localStorage.setItem("api_config", JSON.stringify(tempConfig));
     setShowSettings(false);
   };
 
+  // ─── Send a message ───
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const text = chatInput.trim();
+    if (!text || isLoading) return;
+
+    // Validate API key before sending
+    if (!apiConfig.key) {
+      setError("Please set your API key first. Click the ⚙ Settings icon in the header.");
+      return;
+    }
+
+    setError(null);
+
+    // Add user message
+    const userMsg: Message = { id: crypto.randomUUID(), role: "user", content: text };
+    const updatedMessages = [...messages, userMsg];
+    setMessages(updatedMessages);
+    setChatInput("");
+    setIsLoading(true);
+
+    // Prepare an empty assistant message to stream into
+    const assistantId = crypto.randomUUID();
+    setMessages((prev) => [...prev, { id: assistantId, role: "assistant", content: "" }]);
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: updatedMessages.map((m) => ({ role: m.role, content: m.content })),
+          apiKey: apiConfig.key,
+          apiProvider: apiConfig.provider,
+          apiModel: apiConfig.model,
+        }),
+      });
+
+      if (!response.ok) {
+        let errMsg = `Server error (${response.status})`;
+        try {
+          const errData = await response.json();
+          errMsg = errData.error || errMsg;
+        } catch {}
+        throw new Error(errMsg);
+      }
+
+      // Read the streaming text response
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error("No response stream available.");
+
+      const decoder = new TextDecoder();
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        setMessages((prev) =>
+          prev.map((m) => (m.id === assistantId ? { ...m, content: m.content + chunk } : m))
+        );
+      }
+    } catch (err: any) {
+      setError(err.message || "Something went wrong.");
+      // Remove empty assistant message if nothing was streamed
+      setMessages((prev) => prev.filter((m) => !(m.id === assistantId && m.content === "")));
+    } finally {
+      setIsLoading(false);
+      inputRef.current?.focus();
+    }
+  };
+
+  // ─── Current provider info ───
+  const currentProvider = PROVIDERS[apiConfig.provider] || PROVIDERS.groq;
+
   return (
     <div className="relative flex items-center justify-center min-h-screen p-4" style={{ zIndex: 1 }}>
-      {/* Settings Modal */}
+      {/* ═══ Settings Modal ═══ */}
       {showSettings && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="glass-card w-full max-w-md rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-in fade-in zoom-in-95 duration-200">
+          <div className="glass-card w-full max-w-md rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            {/* Modal Header */}
             <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-white/5">
               <h2 className="text-lg font-semibold text-white flex items-center gap-2">
                 <Key size={18} className="text-sky-400" />
                 API Settings
               </h2>
-              <button 
-                onClick={() => setShowSettings(false)}
-                className="text-white/50 hover:text-white transition-colors"
-              >
+              <button onClick={() => setShowSettings(false)} className="text-white/50 hover:text-white transition-colors">
                 <X size={20} />
               </button>
             </div>
-            <div className="p-6 space-y-4">
+
+            {/* Modal Body */}
+            <div className="p-6 space-y-5">
+              {/* Provider Select */}
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">
-                  Groq API Key
-                </label>
+                <label className="block text-sm font-medium text-white/70 mb-2">Provider</label>
+                <div className="relative">
+                  <select
+                    value={tempConfig.provider}
+                    onChange={(e) => {
+                      const newProvider = e.target.value;
+                      setTempConfig({
+                        ...tempConfig,
+                        provider: newProvider,
+                        model: PROVIDERS[newProvider].models[0],
+                      });
+                    }}
+                    className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 transition-all appearance-none cursor-pointer"
+                  >
+                    {Object.entries(PROVIDERS).map(([key, p]) => (
+                      <option key={key} value={key} className="bg-slate-900">{p.name}</option>
+                    ))}
+                  </select>
+                  <ChevronDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none" />
+                </div>
+              </div>
+
+              {/* Model Select */}
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">Model</label>
+                <div className="relative">
+                  <select
+                    value={tempConfig.model}
+                    onChange={(e) => setTempConfig({ ...tempConfig, model: e.target.value })}
+                    className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 transition-all appearance-none cursor-pointer"
+                  >
+                    {PROVIDERS[tempConfig.provider].models.map((m) => (
+                      <option key={m} value={m} className="bg-slate-900">{m}</option>
+                    ))}
+                  </select>
+                  <ChevronDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none" />
+                </div>
+              </div>
+
+              {/* API Key Input */}
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">API Key</label>
                 <input
                   type="password"
-                  value={tempKey}
-                  onChange={(e) => setTempKey(e.target.value)}
-                  placeholder="gsk_..."
-                  className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all"
+                  value={tempConfig.key}
+                  onChange={(e) => setTempConfig({ ...tempConfig, key: e.target.value })}
+                  placeholder="Paste your API key here..."
+                  className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all"
                 />
                 <p className="text-xs text-white/40 mt-2">
-                  Your API key is stored securely in your browser's local storage and is only sent directly to the Groq API.
+                  Stored in your browser only. Never sent anywhere except the selected provider.
                 </p>
               </div>
+
+              {/* Save Button */}
               <button
-                onClick={saveApiKey}
-                className="w-full bg-sky-500 hover:bg-sky-400 text-white font-medium py-3 rounded-xl transition-colors shadow-lg shadow-sky-500/20"
+                onClick={saveConfig}
+                disabled={!tempConfig.key.trim()}
+                className="w-full bg-sky-500 hover:bg-sky-400 disabled:opacity-40 disabled:cursor-not-allowed text-white font-medium py-3 rounded-xl transition-colors shadow-lg shadow-sky-500/20"
               >
-                Save API Key
+                Save & Close
               </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Main Chat Container */}
+      {/* ═══ Main Chat Container ═══ */}
       <div className="glass-card flex flex-col w-full max-w-3xl rounded-2xl overflow-hidden"
         style={{ height: "calc(100vh - 2rem)", maxHeight: "900px" }}>
 
@@ -113,11 +239,13 @@ export default function Chat() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-xs px-3 py-1 rounded-full font-medium hidden sm:inline-block"
-              style={{ background: "rgba(14,165,233,0.15)", color: "rgb(125,211,252)", border: "1px solid rgba(14,165,233,0.25)" }}>
-              AI Online
-            </span>
-            <button 
+            {apiConfig.key && (
+              <span className="text-xs px-3 py-1 rounded-full font-medium hidden sm:inline-block"
+                style={{ background: "rgba(14,165,233,0.15)", color: "rgb(125,211,252)", border: "1px solid rgba(14,165,233,0.25)" }}>
+                {currentProvider.name}
+              </span>
+            )}
+            <button
               onClick={() => setShowSettings(true)}
               className="p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white transition-all group"
               title="Settings"
@@ -141,8 +269,8 @@ export default function Chat() {
                 <p className="text-sm text-white/40 max-w-sm mx-auto mb-4">
                   Ask me about SIH problem statements, themes, organizations, or any hackathon details.
                 </p>
-                {!apiKey && (
-                  <button 
+                {!apiConfig.key && (
+                  <button
                     onClick={() => setShowSettings(true)}
                     className="inline-flex items-center gap-2 px-4 py-2 bg-sky-500/20 text-sky-300 border border-sky-500/30 rounded-lg text-sm font-medium hover:bg-sky-500/30 transition-colors"
                   >
@@ -160,7 +288,7 @@ export default function Chat() {
             </div>
           )}
 
-          {/* Messages */}
+          {/* Rendered Messages */}
           {messages.map((m) => (
             <div
               key={m.id}
@@ -176,9 +304,7 @@ export default function Chat() {
                 {/* Bubble */}
                 <div className={m.role === "user" ? "msg-user" : "msg-assistant"}>
                   <div className="px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap">
-                    {m.parts?.map((part, i) =>
-                      part.type === "text" ? <span key={i}>{part.text}</span> : null
-                    ) ?? m.content}
+                    {m.content || (isLoading ? "" : "...")}
                   </div>
                 </div>
               </div>
@@ -186,7 +312,7 @@ export default function Chat() {
           ))}
 
           {/* Typing Indicator */}
-          {isLoading && (
+          {isLoading && messages[messages.length - 1]?.content === "" && (
             <div className="message-appear flex justify-start">
               <div className="flex gap-3 max-w-[80%]">
                 <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center mt-1 avatar-bot">
@@ -201,11 +327,11 @@ export default function Chat() {
             </div>
           )}
 
-          {/* Error */}
+          {/* Error Display */}
           {error && (
             <div className="message-appear error-card p-4 rounded-xl flex items-center gap-3">
               <AlertCircle size={18} className="flex-shrink-0" />
-              <p className="text-sm">{error.message}</p>
+              <p className="text-sm">{error}</p>
             </div>
           )}
 
@@ -213,27 +339,26 @@ export default function Chat() {
         </div>
 
         {/* ─── Input Area ─── */}
-        <div className="px-5 pb-5 pt-3"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+        <div className="px-5 pb-5 pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <form onSubmit={onSubmit} className="relative flex items-center">
             <input
               ref={inputRef}
               className="chat-input w-full pl-5 pr-14 py-4 rounded-xl text-sm"
-              value={input}
+              value={chatInput}
               placeholder="Ask about SIH problem statements..."
-              onChange={(e) => setInput(e.target.value)}
+              onChange={(e) => setChatInput(e.target.value)}
               disabled={isLoading}
             />
             <button
               type="submit"
-              disabled={isLoading || input.trim().length === 0}
+              disabled={isLoading || chatInput.trim().length === 0}
               className="send-btn absolute right-2 w-10 h-10 rounded-lg flex items-center justify-center"
             >
               <Send size={16} />
             </button>
           </form>
           <p className="text-center text-[10px] mt-3 text-white/20">
-            Powered by Groq LLM & Vectra Vector Search
+            Powered by {currentProvider.name} &amp; Vectra Vector Search
           </p>
         </div>
       </div>

@@ -1,5 +1,7 @@
-import { streamText, convertToModelMessages } from 'ai';
-import { createGroq, groq } from '@ai-sdk/groq';
+import { streamText } from 'ai';
+import { createGroq } from '@ai-sdk/groq';
+import { createOpenAI } from '@ai-sdk/openai';
+import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { getVectorStore, generateEmbedding } from '@/lib/vectorStore';
 import fs from 'fs';
 import path from 'path';
@@ -61,19 +63,42 @@ function findPSByExactId(sihNumbers: string[]): string[] {
   return results;
 }
 
+/**
+ * Create the appropriate LLM model instance based on provider, model name, and API key.
+ */
+function createModelInstance(provider: string, modelName: string, apiKey: string) {
+  if (provider === 'openai') {
+    const openai = createOpenAI({ apiKey });
+    return openai(modelName);
+  } else if (provider === 'google') {
+    const google = createGoogleGenerativeAI({ apiKey });
+    return google(modelName);
+  } else {
+    // Default: Groq
+    const groq = createGroq({ apiKey });
+    return groq(modelName);
+  }
+}
+
 export async function POST(req: Request) {
   try {
-    const { messages } = await req.json();
+    const body = await req.json();
+    const { messages, apiKey, apiProvider, apiModel } = body;
 
-    // AI SDK v6: UIMessages use 'parts' array, extract text from the latest message
+    const provider = apiProvider || 'groq';
+    const modelName = apiModel || 'llama-3.3-70b-versatile';
+
+    // Validate API key
+    if (!apiKey) {
+      return Response.json(
+        { error: 'Missing API Key. Please click the Settings icon to add your API key.' },
+        { status: 401 }
+      );
+    }
+
+    // Extract the latest user message text for RAG search
     const lastMessage = messages[messages.length - 1];
-    const latestText =
-      lastMessage.parts
-        ?.filter((p: any) => p.type === 'text')
-        .map((p: any) => p.text)
-        .join(' ') ||
-      lastMessage.content ||
-      '';
+    const latestText = lastMessage?.content || '';
 
     // --- HYBRID SEARCH ---
     const contextParts: string[] = [];
@@ -88,17 +113,21 @@ export async function POST(req: Request) {
     }
 
     // Step 2: Semantic vector search (broad, meaning-based)
-    const queryVector = await generateEmbedding(latestText);
-    const index = await getVectorStore();
-    const results = await index.queryItems(queryVector, latestText, 8);
+    try {
+      const queryVector = await generateEmbedding(latestText);
+      const index = await getVectorStore();
+      const results = await index.queryItems(queryVector, latestText, 8);
 
-    results.forEach((r, i) => {
-      contextParts.push(`[Semantic Source ${i + 1}] Score: ${r.score.toFixed(3)}\n${String(r.item.metadata.text)}`);
-    });
+      results.forEach((r: any, i: number) => {
+        contextParts.push(`[Semantic Source ${i + 1}] Score: ${r.score.toFixed(3)}\n${String(r.item.metadata.text)}`);
+      });
+    } catch (vecErr) {
+      console.warn('Vector search failed (index might be empty):', vecErr);
+    }
 
     const context = contextParts.join('\n\n---\n\n');
 
-    // System prompt
+    // System prompt with RAG context
     const systemPrompt = `You are an expert Smart India Hackathon (SIH) advisory assistant.
 
 CRITICAL RULES:
@@ -113,32 +142,22 @@ CONTEXT:
 ${context}
 `;
 
-    // Convert UIMessages to model messages and stream LLM Response
-    const modelMessages = await convertToModelMessages(messages);
+    // Create model instance and stream the response
+    const model = createModelInstance(provider, modelName, apiKey);
 
-    const apiKey = req.headers.get('x-groq-api-key');
-    if (!apiKey) {
-      return new Response(JSON.stringify({ error: "Missing Groq API Key. Please click the Settings icon to add your API key." }), {
-        status: 401,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-
-    const groq = createGroq({ apiKey });
-
-    const result = await streamText({
-      model: groq('llama-3.3-70b-versatile'),
+    const result = streamText({
+      model,
       system: systemPrompt,
-      messages: modelMessages,
+      messages: messages.map((m: any) => ({ role: m.role, content: m.content })),
       temperature: 0.2,
     });
 
-    return result.toUIMessageStreamResponse();
+    return result.toTextStreamResponse();
   } catch (error: any) {
     console.error('Chat API Error:', error);
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return Response.json(
+      { error: error.message || 'An unexpected error occurred.' },
+      { status: 500 }
+    );
   }
 }
