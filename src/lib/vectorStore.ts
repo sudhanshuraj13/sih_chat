@@ -3,8 +3,8 @@ import { LocalIndex } from 'vectra';
 import path from 'path';
 
 // Disable local models since we will download from hub
-env.allowLocalModels = false;
-env.useBrowserCache = false;
+(env as any).allowLocalModels = false;
+(env as any).useBrowserCache = false;
 
 // Create a singleton for the embedding pipeline to avoid reloading
 let embedderInstance: any = null;
