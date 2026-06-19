@@ -2,7 +2,6 @@
 
 import {
   AlertCircle,
-  Bot,
   ChevronDown,
   Clipboard,
   Key,
@@ -57,6 +56,10 @@ const STARTERS = [
     meta: "Presentation ready",
   },
 ];
+
+function ChatLogo({ className = "" }: { className?: string }) {
+  return <img src="/sih-companion-logo.svg" alt="SIH Companion logo" className={className} />;
+}
 
 export default function Chat() {
   const [apiConfig, setApiConfig] = useState<ApiConfig>(DEFAULT_CONFIG);
@@ -271,7 +274,7 @@ export default function Chat() {
         <header className="flex items-center justify-between gap-4 border-b border-white/65 px-4 py-3 sm:px-6">
           <div className="flex min-w-0 items-center gap-3">
             <div className="brand-mark">
-              <Bot size={19} />
+              <ChatLogo className="logo-image" />
             </div>
             <div className="min-w-0">
               <h1 className="truncate text-base font-semibold text-slate-950 sm:text-lg">SIH Companion</h1>
@@ -330,7 +333,7 @@ export default function Chat() {
               {messages.length === 0 ? (
                 <div className="mx-auto flex min-h-full max-w-3xl flex-col items-center justify-center py-8 text-center">
                   <div className="hero-mark">
-                    <Bot size={28} />
+                    <ChatLogo className="logo-image" />
                   </div>
                   <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-coral-600">
                     Hi, builder
@@ -378,7 +381,7 @@ export default function Chat() {
                     >
                       <div className={`message-row ${m.role === "user" ? "message-row-user" : ""}`}>
                         <div className={m.role === "user" ? "avatar-user" : "avatar-bot"}>
-                          {m.role === "user" ? <User size={15} /> : <Bot size={15} />}
+                          {m.role === "user" ? <User size={15} /> : <ChatLogo className="logo-image" />}
                         </div>
                         <div className="group min-w-0">
                           <div className={m.role === "user" ? "bubble-user" : "bubble-assistant"}>
@@ -403,7 +406,7 @@ export default function Chat() {
                     <div className="message-appear flex justify-start">
                       <div className="message-row">
                         <div className="avatar-bot">
-                          <Bot size={15} />
+                          <ChatLogo className="logo-image" />
                         </div>
                         <div className="bubble-assistant px-5 py-4">
                           <span className="typing-dot" />
