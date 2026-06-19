@@ -453,7 +453,7 @@ export default function Chat() {
                 </button>
               </form>
               <p className="mt-2 text-center text-[11px] font-medium text-slate-400">
-                Powered by {currentProvider.name} and local vector search
+                Built by Sudhanshu Raj. 
               </p>
             </footer>
           </div>
